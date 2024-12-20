@@ -1,0 +1,2702 @@
+[
+  {
+    "faculty" : 0,
+    "id" : "LOGS797A",
+    "name" : "Logistics Management Project 1"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS323",
+    "name" : "Supplier-Customer Relationship Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS598B",
+    "name" : "Special Topics in Logistics"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS215",
+    "name" : "Transportation and Distribution Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC332",
+    "name" : "Management Accounting"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT333",
+    "name" : "Decision Support System"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT126",
+    "name" : "Fundamentals of Microeconomics"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC414",
+    "name" : "Advanced Accounting"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT315",
+    "name" : "Business Law"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT124",
+    "name" : "Fundamentals of Marketing"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC352",
+    "name" : "International Corporate Finance"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC435",
+    "name" : "Accounting Ethics and Corporate Governance"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC211",
+    "name" : "Cost Accounting"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS316",
+    "name" : "Warehouse Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS341",
+    "name" : "Green and Reverse Logistics"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT313",
+    "name" : "Knowledge Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT418",
+    "name" : "Quality Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS417",
+    "name" : "Retail Logistics"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA352",
+    "name" : "Marketing and Customer Relationship Policies Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC213",
+    "name" : "Intermediate Accounting I"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT598A",
+    "name" : "Special Topics in Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA320",
+    "name" : "Big Data and Data Warehousing"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC325",
+    "name" : "International Accounting & IFRS"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS797B",
+    "name" : "Logistics Management Project 2"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC333",
+    "name" : "Auditing I and Assurance Services"
+  },
+  {
+    "faculty" : 0,
+    "id" : "DM1101",
+    "name" : "Fundamentals of Digital Marketing"
+  },
+  {
+    "faculty" : 0,
+    "id" : "TAX7103",
+    "name" : "Indirect Taxation: Policy and Practice in Jordan and Other Countries"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS213",
+    "name" : "Operations Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS713",
+    "name" : "Managerial Accounting for Logistics"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA330",
+    "name" : "Data Analysis and Presentation"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA311",
+    "name" : "Data Mining for Business"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS112",
+    "name" : "Operations Research in Logistics Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS712",
+    "name" : "Production & Operations Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA331",
+    "name" : "Spreadsheets Management and Design for BI"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT328",
+    "name" : "Project Management and Planning"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA270",
+    "name" : "Communications Skills in Business"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT211",
+    "name" : "Organizational Behavior"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS598C",
+    "name" : "Special Topics in Logistics"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC424",
+    "name" : "Financial Statement Analysis"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS315",
+    "name" : "Inventory Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC598A",
+    "name" : "Special Topics in Accounting"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS214",
+    "name" : "Import-Export Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA410",
+    "name" : "Artificial Intelligence and Machine Learning for Business"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT101",
+    "name" : "Principles of Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC102",
+    "name" : "Principles of Accounting II"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC434",
+    "name" : "Auditing II and Forensic Accounting"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS721",
+    "name" : "Logistics and Supply Chain Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA140",
+    "name" : "Introduction to E-business"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS121",
+    "name" : "Introduction to Supply Chain Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA111",
+    "name" : "Fundamentals of Business Intelligence(BI)"
+  },
+  {
+    "faculty" : 0,
+    "id" : "TAX7102",
+    "name" : "Direct Taxation: Policy and Practice in Jordan and Other Countries"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA230",
+    "name" : "Cyber Security Business Applications"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC251",
+    "name" : "Fundamentals of Finance"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT416",
+    "name" : "Organizational Development & Change"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT213",
+    "name" : "Research Methods for Business"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA350",
+    "name" : "E-Commerce Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT412",
+    "name" : "Corporate Strategies and Policies"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT314",
+    "name" : "Human Resources Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS711",
+    "name" : "Applied Data Analysis"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS101",
+    "name" : "Introduction to Logistics"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT121",
+    "name" : "Mathematics for Business"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT598B",
+    "name" : "Special Topics in Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS723",
+    "name" : "Transportation & Distribution Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC101",
+    "name" : "Principles of Accounting I"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS324",
+    "name" : "Logistics Network Design"
+  },
+  {
+    "faculty" : 0,
+    "id" : "ACC598B",
+    "name" : "Special Topics in Accounting"
+  },
+  {
+    "faculty" : 0,
+    "id" : "MGT122",
+    "name" : "Business Statistics"
+  },
+  {
+    "faculty" : 0,
+    "id" : "TAX7101",
+    "name" : "Economics and Taxation Policy"
+  },
+  {
+    "faculty" : 0,
+    "id" : "BIDA131",
+    "name" : "Fundamentals of Business Databases"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS223",
+    "name" : "Procurement Management"
+  },
+  {
+    "faculty" : 0,
+    "id" : "LOGS433",
+    "name" : "Logistics Enterprise Resource Planning Modules"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA743",
+    "name" : "Strategic Management and Business Policy"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA734",
+    "name" : "Accounting for Decision Making"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA768",
+    "name" : "Entrepreneurship and Innovation"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA745",
+    "name" : "Human Resources Management"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA749",
+    "name" : "Strategic Management"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA790",
+    "name" : "Marketing Management"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA799E",
+    "name" : "Comprehensive Exam"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA712",
+    "name" : "Management and Cost Accounting"
+  },
+  {
+    "faculty" : 1,
+    "id" : "MBA727",
+    "name" : "Business Research Methods"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL1001",
+    "name" : "Upper Intermediate English"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW732",
+    "name" : "Administration and Coordination of Humanitarian Systems and Sustainable Transition Building"
+  },
+  {
+    "faculty" : 2,
+    "id" : "TRA340",
+    "name" : "Translation of Scientific and Technical Texts (AR-EN-GE)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "NEE101",
+    "name" : "National Education in English"
+  },
+  {
+    "faculty" : 2,
+    "id" : "NE101",
+    "name" : "National Education"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GLS504",
+    "name" : "Academic German (Advanced TestDaF-Training)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "AFL100",
+    "name" : "Arabic as a Foreign Language 1"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SFTS101",
+    "name" : "Soft Skills"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW7204",
+    "name" : "Administration and Coordination of Humanitarian Systems and Sustainable Transition Building"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SL320",
+    "name" : "Academic Research Techniques (EN-GE)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL102",
+    "name" : "English IV"
+  },
+  {
+    "faculty" : 2,
+    "id" : "EI101",
+    "name" : "Leadership and Emotional Intelligence"
+  },
+  {
+    "faculty" : 2,
+    "id" : "TRA312",
+    "name" : "Translation of Literary Texts (AR-EN-GE)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ARB100",
+    "name" : "Arabic"
+  },
+  {
+    "faculty" : 2,
+    "id" : "MADAF 712",
+    "name" : "German language teaching approaches"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GEBC341",
+    "name" : "Overview: Politics and Institutions (E\/G)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "MADAF 705",
+    "name" : "German for Academic and Special Purposes"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GLS200",
+    "name" : "German Language Skills: Reading and Writing"
+  },
+  {
+    "faculty" : 2,
+    "id" : "BE302",
+    "name" : "Business Entrepreneurship"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GEBC351",
+    "name" : "Debating in Business Scenarios (E)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL101",
+    "name" : "English III"
+  },
+  {
+    "faculty" : 2,
+    "id" : "TRA242",
+    "name" : "Electronic Translation Tools"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GEBC311",
+    "name" : "Seminar in Linguistics (G)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "AFL99",
+    "name" : "Arabic as a Foreign Language"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW713",
+    "name" : "Mental Health and Psychosocial Support for Refugees"
+  },
+  {
+    "faculty" : 2,
+    "id" : "TRA313",
+    "name" : "Professional Texts: Analysis and Writing (Arabic)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL0099",
+    "name" : "Intermediate English"
+  },
+  {
+    "faculty" : 2,
+    "id" : "PE101",
+    "name" : "Sports and Health"
+  },
+  {
+    "faculty" : 2,
+    "id" : "MADAF 754",
+    "name" : "Advanced Didactics & Methodology"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL201",
+    "name" : "English V"
+  },
+  {
+    "faculty" : 2,
+    "id" : "MADAF 753",
+    "name" : "Instructional design and teaching practice III"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL1002",
+    "name" : "Advanced English"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GEBC253",
+    "name" : "Written Business Communication"
+  },
+  {
+    "faculty" : 2,
+    "id" : "TRA220",
+    "name" : "General Translation I (EN-AREN)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GEBC152",
+    "name" : "Principles of Communication (E)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ARB0099",
+    "name" : "Basic Arabic"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GERS202",
+    "name" : "German IV"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW711",
+    "name" : "Social Work for the 21st Century"
+  },
+  {
+    "faculty" : 2,
+    "id" : "TRA243",
+    "name" : "Lexicology and Terminology (EN\/AR)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW722",
+    "name" : "Research in Social Work"
+  },
+  {
+    "faculty" : 2,
+    "id" : "TRA311",
+    "name" : "Contrastive Linguistics II (AR-GE)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "MADAF 723",
+    "name" : "Pragmatics in contrastive linguistics (for teaching German to Arabic speaking learners)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW7101",
+    "name" : "Social Work for the 21st Century"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL0098",
+    "name" : "Elementary English"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GEBC315",
+    "name" : "German for Tourism Communication"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SL111",
+    "name" : "Introduction to Linguistics (EN)"
+  },
+  {
+    "faculty" : 2,
+    "id" : "IC101",
+    "name" : "Intercultural Communications"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SE301",
+    "name" : "Social Entrepreneurship and Enterprises"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW7102",
+    "name" : "Research in Social Work"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GERS301",
+    "name" : "German V"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW799E",
+    "name" : "Comprehensive Exam"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL699",
+    "name" : "English Intensive Course"
+  },
+  {
+    "faculty" : 2,
+    "id" : "MADAF 751",
+    "name" : "Instructional design and teaching practice I"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW714",
+    "name" : "Introduction to Field Training"
+  },
+  {
+    "faculty" : 2,
+    "id" : "MILS100",
+    "name" : "Military Science *For Jordanian Only"
+  },
+  {
+    "faculty" : 2,
+    "id" : "DAF9906",
+    "name" : "Ph.D. Dissertation VI"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW7105",
+    "name" : "Community-Based Interventions in Social Work"
+  },
+  {
+    "faculty" : 2,
+    "id" : "ENGL202",
+    "name" : "English VI"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GERS302",
+    "name" : "German VI"
+  },
+  {
+    "faculty" : 2,
+    "id" : "GLS2101",
+    "name" : "German Language Skills: Speaking and Listening"
+  },
+  {
+    "faculty" : 2,
+    "id" : "SW745",
+    "name" : "Special Topics in Social Work"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM3255",
+    "name" : "Physiological Modeling and Control Systems"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM227",
+    "name" : "Bioorganic Chemistry for BM"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM331",
+    "name" : "Biomaterials"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM371",
+    "name" : "Numerical Methods for Engineers"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE711",
+    "name" : "Thermodynamics in chemical and pharmaceutical processes"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE211",
+    "name" : "Introduction to Pharmaceutical and Chemical Engineering"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE341",
+    "name" : "Pharmaceutical Organic Chemistry"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE2523",
+    "name" : "Microbiology"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE342",
+    "name" : "Instrumental Analysis"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM229",
+    "name" : "Bioorganic Chemistry Lab for BM"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM242",
+    "name" : "Biofluid Mechanics and Transport Phenomena"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE562",
+    "name" : "Separation Processes Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE312",
+    "name" : "Separation Processes"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM2021",
+    "name" : "Introduction to Biomedical Engineering"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM328",
+    "name" : "Automatic Control Systems for Medical Applications Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM5922",
+    "name" : "Selected Topics in Biomedical Engineering"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE373",
+    "name" : "Pharmaceutical Technology -Liquid Forms Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE321-DS",
+    "name" : "Chemical Reaction Engineering"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE3513",
+    "name" : "Biochemistry"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM552",
+    "name" : "Medical Instrumentation II"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE721",
+    "name" : "Pre-formulation in pharmaceutical manufacturing"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM333",
+    "name" : "Biomaterials Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM323",
+    "name" : "Medical Signal Processing Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "CHEM106",
+    "name" : "General Chemistry lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM211",
+    "name" : "Anatomy and Physiology"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE2101",
+    "name" : "Analytical Chemistry"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM358",
+    "name" : "Biomedical Sensors and Transducers Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM105",
+    "name" : "Engineering Drawing for BM"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM352",
+    "name" : "Biomedical Sensors and Transducers"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE362",
+    "name" : "Fluid, Heat and Reaction Engineering Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE251",
+    "name" : "Analytical Chemistry"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE321",
+    "name" : "Chemical Reaction Engineering"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE282",
+    "name" : "Microbiology Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE381",
+    "name" : "Biochemistry Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE343",
+    "name" : "Pharmaceutical Technology- Liquid Forms"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE5322",
+    "name" : "Quality Assurance and Process Validation"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BIO112",
+    "name" : "Human Biology"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM5822",
+    "name" : "Medical Ethics & Regulatory Affairs"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM325",
+    "name" : "Automatic Control Systems for Medical Applications"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE281",
+    "name" : "Analytical Chemistry Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM321",
+    "name" : "Medical Signal Processing"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE212",
+    "name" : "Principles of Chemical Engineering"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE543",
+    "name" : "Pharmaceutical Plant Design"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BIO111",
+    "name" : "Human Biology"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM341",
+    "name" : "Biomechanics and Rehabilitation I"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE311",
+    "name" : "Transport Phenomena"
+  },
+  {
+    "faculty" : 3,
+    "id" : "CHEM103",
+    "name" : "General Chemistry I"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM557",
+    "name" : "Medical Instrumentation Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM213",
+    "name" : "Anatomy and Physiology Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM551",
+    "name" : "Medical Instrumentation I"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE724",
+    "name" : "Pharmaceutical industry and new technologies"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM5811",
+    "name" : "Health Care Management and Engineering Economy"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE372",
+    "name" : "Instrumental Analysis Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE371",
+    "name" : "Pharmaceutical Organic Chemistry Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM5633",
+    "name" : "Artificial Organs"
+  },
+  {
+    "faculty" : 3,
+    "id" : "BM3288",
+    "name" : "Physiological Modeling and Control Systems Lab"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE495",
+    "name" : "Special Topics in Chemical \/Pharmaceutical Engineering IV"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE5333",
+    "name" : "Hazardous Waste and Risk Management"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE541",
+    "name" : "Medicinal Chemistry"
+  },
+  {
+    "faculty" : 3,
+    "id" : "PCE221",
+    "name" : "Thermodynamics for Pharmaceutical and Chemical Engineering"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME3430",
+    "name" : "Automatic control Systems Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE332",
+    "name" : "Production Planning and Inventory Control"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE3250",
+    "name" : "Manufacturing Processes Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0231",
+    "name" : "Operations Research"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME343",
+    "name" : "Automatic Control Systems"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME554",
+    "name" : "Programmable Logic Controllers"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0216",
+    "name" : "Statics and Strength of Materials"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0224",
+    "name" : "Computer Aided MATH for ME"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0215",
+    "name" : "Dynamics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0221",
+    "name" : "Thermodynamics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME3620",
+    "name" : "Sensors and Actuators Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0252",
+    "name" : "Work Measurement and Standards Lab."
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME535",
+    "name" : "Electrical Machines and Control LAB"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0232",
+    "name" : "Operations Research Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0577",
+    "name" : "Automation and Industry 4.0"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE223",
+    "name" : "Materials Science"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0223",
+    "name" : "Applied Statistics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0312",
+    "name" : "Simulation"
+  },
+  {
+    "faculty" : 4,
+    "id" : "TME515",
+    "name" : "Mechanical Vibrations"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0344",
+    "name" : "Control Systems I"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0533",
+    "name" : "Supply Chain Engineering"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE326",
+    "name" : "Elements of Machine Design"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0341",
+    "name" : "Power and Refrigeration Cycles"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0542",
+    "name" : "Thermal Systems Lab II"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0222",
+    "name" : "Fluid Mechanics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "EIM7311",
+    "name" : "Innovation and Entrepreneurship Fundamentals"
+  },
+  {
+    "faculty" : 4,
+    "id" : "TME520",
+    "name" : "Applied Thermal Systems Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0111",
+    "name" : "Computer Aided Engineering Drawing"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0552",
+    "name" : "Management of Maintenance Systems"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE771",
+    "name" : "Special Topics in Engineering Management"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0546",
+    "name" : "Modern Manufacturing Technology"
+  },
+  {
+    "faculty" : 4,
+    "id" : "EIM7101",
+    "name" : "Startup Building 1: Market Opportunity to Engineering Concepts"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0547",
+    "name" : "Modern Manufacturing Technology Lab."
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE799E",
+    "name" : "Comprehensive Exam"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0562",
+    "name" : "Industrial Cost analysis"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0361",
+    "name" : "Engineering Economics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0331",
+    "name" : "Theory of Machines"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE541",
+    "name" : "Industrial Automation"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE772",
+    "name" : "Special Topics in Innovation Management"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0243",
+    "name" : "Materials science and engineering Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE751",
+    "name" : "Applied Data Analytics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "EIM7611",
+    "name" : "Research Methods"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0516",
+    "name" : "Facility and Asset Management"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0544",
+    "name" : "Building Services"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0314",
+    "name" : "Production Planning"
+  },
+  {
+    "faculty" : 4,
+    "id" : "EIM7221",
+    "name" : "Intercultural Ethics and Onboarding"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0348",
+    "name" : "Sensors"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0211",
+    "name" : "Fundamentals of Mechanical Design"
+  },
+  {
+    "faculty" : 4,
+    "id" : "TME351",
+    "name" : "Spare Parts and Storage Management"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE224",
+    "name" : "Materials and Mechanics Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0214",
+    "name" : "Electronics for Mechatronics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0354",
+    "name" : "Ergonomics Lab."
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0312",
+    "name" : "Microcontrollers and IOT"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0548",
+    "name" : "Control Systems II"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0281",
+    "name" : "Technical Writing and Engineering Ethics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE3315",
+    "name" : "Operations Research"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0515",
+    "name" : "Product development and Entrepreneurship"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0551",
+    "name" : "Robotics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0313",
+    "name" : "Microcontrollers and IOT lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0214",
+    "name" : "Mechanics of Materials Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME111",
+    "name" : "Computer Aided Engineering Drawing"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE733",
+    "name" : "Reliability & Maintenance Management"
+  },
+  {
+    "faculty" : 4,
+    "id" : "TME522",
+    "name" : "Heating Ventilating and Air Conditioning (HVAC)"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0355",
+    "name" : "Sensors and Actuators Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0532",
+    "name" : "Mechanical Vibrations lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0141",
+    "name" : "Engineering Workshop"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0121",
+    "name" : "Probability and Statistics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0324",
+    "name" : "Quality Engineering"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0361",
+    "name" : "Computer Aided Mathematics for MECH"
+  },
+  {
+    "faculty" : 4,
+    "id" : "EIM7312",
+    "name" : "Product Development and Prototyping"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0526",
+    "name" : "Data Analytics for industrial Engineering"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE711",
+    "name" : "Operations Research & Simulation"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0213",
+    "name" : "Mechanics of Materials"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0354",
+    "name" : "Actuators"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE763",
+    "name" : "Applied Research Project II: Project Management and Entrepreneurship"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0223",
+    "name" : "Thermofluids"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0571",
+    "name" : "Machine Intelligence I"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE517",
+    "name" : "Statistics and Engineering Economics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0578",
+    "name" : "Automation and Industry 4.0 Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0111",
+    "name" : "Introduction to IE"
+  },
+  {
+    "faculty" : 4,
+    "id" : "TME323",
+    "name" : "Thermofluids Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME1110",
+    "name" : "Computer Aided Engineering Drawing Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE761",
+    "name" : "Research Methods"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0325",
+    "name" : "Quality Engineering Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE33150",
+    "name" : "Operations Research Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME5540",
+    "name" : "Programmable Logic Controllers LAB"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME551",
+    "name" : "Robotics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE583",
+    "name" : "Supply Chain Management"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0344",
+    "name" : "Manufacturing Processes"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE5399",
+    "name" : "Special Topics in Optimization and Mathematics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE562",
+    "name" : "Ergonomics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0212",
+    "name" : "Electrical Circuits and Machines"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0321",
+    "name" : "Thermofluids Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "TME539",
+    "name" : "Computer-aided Design"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0346",
+    "name" : "Instrumentation & Measurements"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE5410",
+    "name" : "Industrial Automation Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME362",
+    "name" : "Sensors and Actuators"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0353",
+    "name" : "Ergonomics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "TME331",
+    "name" : "Theory of Machines"
+  },
+  {
+    "faculty" : 4,
+    "id" : "TME552",
+    "name" : "Management of Maintenance Systems"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE325",
+    "name" : "Manufacturing Processes"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE5620",
+    "name" : "Ergonomics Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0541",
+    "name" : "Heating Ventilation & Air Conditioning"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0222",
+    "name" : "Computer Aided MATH For IE"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH2201",
+    "name" : "Applied Thermodynamics"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME555",
+    "name" : "Machine Intelligence"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0313",
+    "name" : "Simulation Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0348",
+    "name" : "Materials and Manufacturing Engineering"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0345",
+    "name" : "Manufacturing Processes Lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0531",
+    "name" : "Mechanical Vibrations"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0345",
+    "name" : "Control and Vibration lab"
+  },
+  {
+    "faculty" : 4,
+    "id" : "MECH0342",
+    "name" : "Thermal Systems Lab I"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0251",
+    "name" : "Work Measurement and Standards"
+  },
+  {
+    "faculty" : 4,
+    "id" : "IE0242",
+    "name" : "Materials Science and engineering"
+  },
+  {
+    "faculty" : 4,
+    "id" : "ME0347",
+    "name" : "Instrumentation & Measurements Lab"
+  },
+  {
+    "faculty" : 5,
+    "id" : "AC225",
+    "name" : "Comparative History of Arts"
+  },
+  {
+    "faculty" : 5,
+    "id" : "GB761",
+    "name" : "Introduction to Sustainable Construction Methods"
+  },
+  {
+    "faculty" : 5,
+    "id" : "AC323",
+    "name" : "Heritage Conservation and Management"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH425",
+    "name" : "Regional and Vernacular Architecture"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH1011",
+    "name" : "Technical Writing"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES523",
+    "name" : "Public Relations and Marketing Concepts"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES513",
+    "name" : "Creative design studio A"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH1131",
+    "name" : "Technical Illustration I"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES1200",
+    "name" : "Freehand Foundation"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARC341",
+    "name" : "Housing"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES516",
+    "name" : "Creative photography A"
+  },
+  {
+    "faculty" : 5,
+    "id" : "SABE231",
+    "name" : "Computing Fundamentals for Architects and Designers"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES314",
+    "name" : "Fashion Accessories Design"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH351",
+    "name" : "Working Designs"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES236",
+    "name" : "Charecter Rigging"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES359",
+    "name" : "Design technology"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES429",
+    "name" : "Excursion: International Design and Media"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES351",
+    "name" : "Composing Techniques"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARC231",
+    "name" : "Computer Visualizations I"
+  },
+  {
+    "faculty" : 5,
+    "id" : "SP745",
+    "name" : "Planning in Cities and Metropolitan Areas"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARC211",
+    "name" : "Architectural Design: Methods and Typologies"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH361",
+    "name" : "Structural Systems II"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES231",
+    "name" : "Typography \/ Arabic"
+  },
+  {
+    "faculty" : 5,
+    "id" : "SABE725",
+    "name" : "Professional Practice Skills"
+  },
+  {
+    "faculty" : 5,
+    "id" : "AC799E",
+    "name" : "Comprehensive Exam"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH403",
+    "name" : "Special Topics in Architecture II"
+  },
+  {
+    "faculty" : 5,
+    "id" : "IARC316",
+    "name" : "Color, Light, and Space"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES1400",
+    "name" : "Photography"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES403",
+    "name" : "Special Topics in Design and Visual Communication C"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES353",
+    "name" : "Editing and Montage"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARC541",
+    "name" : "Urban Design"
+  },
+  {
+    "faculty" : 5,
+    "id" : "GB765",
+    "name" : "Strategy for sustainable construction"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES131",
+    "name" : "Typography \/ Latin"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES101",
+    "name" : "Arts Appreciation"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARC111",
+    "name" : "Fundamentals of Design I"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH421",
+    "name" : "Excursion: International Architecture"
+  },
+  {
+    "faculty" : 5,
+    "id" : "GB760",
+    "name" : "Sustainable Building Systems"
+  },
+  {
+    "faculty" : 5,
+    "id" : "SP723",
+    "name" : "Advanced Applied Research"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES210",
+    "name" : "Cinema and TV Studio"
+  },
+  {
+    "faculty" : 5,
+    "id" : "AC227",
+    "name" : "Comparative History of Architecture"
+  },
+  {
+    "faculty" : 5,
+    "id" : "GB780",
+    "name" : "Project Management and Building Laws"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH221",
+    "name" : "Modern Foundations of Architecture"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES411",
+    "name" : "Information Design"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARC313",
+    "name" : "Design of Cultural and Civic Buildings"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES130",
+    "name" : "FreeHand Sketching I"
+  },
+  {
+    "faculty" : 5,
+    "id" : "IARC311",
+    "name" : "Domestic Environments Design Studio"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES133",
+    "name" : "Calligraphy and Ornaments"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH354",
+    "name" : "Project Management and Site Organization I"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES215",
+    "name" : "Web Design"
+  },
+  {
+    "faculty" : 5,
+    "id" : "SP710",
+    "name" : "Planning Studio I"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH262",
+    "name" : "Utility Planning and Design I"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES239",
+    "name" : "Multimedia Software"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES252",
+    "name" : "Realization Print"
+  },
+  {
+    "faculty" : 5,
+    "id" : "GB764",
+    "name" : "Sustainable Urban Concepts"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH140",
+    "name" : "Understanding the Built Environment"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH151",
+    "name" : "Building Construction Materials and Processes I"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH458",
+    "name" : "Specifications and Quantity Surveying"
+  },
+  {
+    "faculty" : 5,
+    "id" : "SABE724",
+    "name" : "Research Methods"
+  },
+  {
+    "faculty" : 5,
+    "id" : "SP780",
+    "name" : "Spatial Socio-Economic Development Planning"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARC441",
+    "name" : "Adaptive Re-Use of Buildings and Sites"
+  },
+  {
+    "faculty" : 5,
+    "id" : "ARCH315",
+    "name" : "Furniture Design"
+  },
+  {
+    "faculty" : 5,
+    "id" : "DES224",
+    "name" : "History of Visual Communication Design"
+  },
+  {
+    "faculty" : 5,
+    "id" : "SP770",
+    "name" : "Sustainable Planning I"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE317",
+    "name" : "Linear Algebra"
+  },
+  {
+    "faculty" : 6,
+    "id" : "EE510",
+    "name" : "Wireless and Mobile Communications"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE312",
+    "name" : "Analog Communication Systems"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE3561",
+    "name" : "Computer Networks lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE357",
+    "name" : "Operating Systems"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS342",
+    "name" : "Software Engineering"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE315",
+    "name" : "Random Variables and Stochastic Processes"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS1170",
+    "name" : "Object Oriented Programming Lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS323",
+    "name" : "Computational Theory"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE7501",
+    "name" : "Deep Learning"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE355",
+    "name" : "Data Communication"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS223",
+    "name" : "Data Structures"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE331",
+    "name" : "Signals and Systems"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS470",
+    "name" : "Cryptography"
+  },
+  {
+    "faculty" : 6,
+    "id" : "MATH0099",
+    "name" : "Pre-Math"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE716",
+    "name" : "Machine Learning and Pattern Recognition"
+  },
+  {
+    "faculty" : 6,
+    "id" : "MATH101",
+    "name" : "Calculus I"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS263",
+    "name" : "Database Management Systems"
+  },
+  {
+    "faculty" : 6,
+    "id" : "PHYS104",
+    "name" : "physics II"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE212",
+    "name" : "Digital Systems"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS460",
+    "name" : "Data Mining"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS254",
+    "name" : "Visual Programming"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS451",
+    "name" : "Artificial Intelligence"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS1160",
+    "name" : "Computing Fundamentals LAB"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE331",
+    "name" : "Electromagnetics I"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE477",
+    "name" : "Machine Learning"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS419",
+    "name" : "Compiler Construction"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS117",
+    "name" : "Object Oriented Programming"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE377",
+    "name" : "Machine Learning"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ARCH150",
+    "name" : "Physics for Architects"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS416",
+    "name" : "Systems Programming"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE772",
+    "name" : "Computer Security"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE799E",
+    "name" : "Comprehensive Exam"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE333",
+    "name" : "Electromagnetics"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE601",
+    "name" : "Special Topics in Electrical Engineering"
+  },
+  {
+    "faculty" : 6,
+    "id" : "PHYS103",
+    "name" : "Physics I"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE3120",
+    "name" : "Analog Communication Systems Lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "EE361",
+    "name" : "Modeling and Simulation of Electrical Systems"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE541",
+    "name" : "Electronic Communication Circuits"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE2410",
+    "name" : "Electronics I Lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS332",
+    "name" : "Computer Graphics"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS115",
+    "name" : "Computing Fundamentals"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE7504",
+    "name" : "Image Processing"
+  },
+  {
+    "faculty" : 6,
+    "id" : "MATH102",
+    "name" : "Calculus II"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS201",
+    "name" : "Discrete Structures"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE5410",
+    "name" : "Electronic Communication Circuits Lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE2120",
+    "name" : "Digital Systems Lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS1150",
+    "name" : "Computing Fundamentals LAB"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE3570",
+    "name" : "Operating Systems Lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS116",
+    "name" : "Computing Fundamentals"
+  },
+  {
+    "faculty" : 6,
+    "id" : "ECE241",
+    "name" : "Electronics I"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE201",
+    "name" : "Computer Architecture and Organization"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE352",
+    "name" : "Computer Networks"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CS222",
+    "name" : "Theory Of Algorithms"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE3420",
+    "name" : "Microprocessor and Microcomputer Systems Lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "MATH203",
+    "name" : "Applied Mathematics For Engineers"
+  },
+  {
+    "faculty" : 6,
+    "id" : "CE7701",
+    "name" : "Internet of Things"
+  },
+  {
+    "faculty" : 6,
+    "id" : "PHYS106",
+    "name" : "General physics Lab"
+  },
+  {
+    "faculty" : 6,
+    "id" : "MATH205",
+    "name" : "Differential Equations"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302GY",
+    "name" : "German VI-German year"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL102B2",
+    "name" : "German II B2-TRACK"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302B2",
+    "name" : "German VI B2-TRACK"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302INT",
+    "name" : "German VI B1-Intensive"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302CE",
+    "name" : "German 6 technical for civil engineering"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL000P",
+    "name" : "German Precourse"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302BM",
+    "name" : "German 6 technical for biomedical engineering"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL201B2",
+    "name" : "German III B2-TRACK"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL201NU",
+    "name" : "German III-NU"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL301B2",
+    "name" : "German V B2-TRACK"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL102B1",
+    "name" : "German II B1-Track"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302EE",
+    "name" : "German 6 technical for energy engineering"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302ACC",
+    "name" : "German 6 technical for international accounting"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL301B1",
+    "name" : "German V B1-TRACK"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL201B1",
+    "name" : "German III B1-TRACK"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302ARCH",
+    "name" : "German 6 technical for architecture"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL301HP",
+    "name" : "German V-HP"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302CH",
+    "name" : "German 6 technical for pharmaceutical and chemical engineering"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL202B2",
+    "name" : "German IV B2-TRACK"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302DES",
+    "name" : "German 6 technical for communication design"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL302IE",
+    "name" : "German 6 technical for industrial engineering"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL202NU",
+    "name" : "German IV-NU"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL202B1",
+    "name" : "German IV B1-TRACK"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL101HP",
+    "name" : "German I-HP"
+  },
+  {
+    "faculty" : 7,
+    "id" : "GERL101B1",
+    "name" : "German I B1- Track"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE513",
+    "name" : "Air Pollution Control lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE322",
+    "name" : "Structural analysis ( 2 )"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE521",
+    "name" : "Reinforced Concrete ( 2 )"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE323",
+    "name" : "Fluid Mechanics Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE333",
+    "name" : "Highway and Traffic Engineering"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE541",
+    "name" : "Foundation Engineering"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE316",
+    "name" : "Introduction to Communication Systems for Energy Engineers"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE515",
+    "name" : "Electrical Power Generation, Transmission & Distribution"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ERE792",
+    "name" : "Special topics in environmental engineering"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE531",
+    "name" : "Transportation Engineering"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE341",
+    "name" : "Geotechnical Engineering"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE432",
+    "name" : "Power Plants Engineering"
+  },
+  {
+    "faculty" : 8,
+    "id" : "HWASH732",
+    "name" : "Humanitarian WaSH Project Cycle Management 2"
+  },
+  {
+    "faculty" : 8,
+    "id" : "HWASH799A",
+    "name" : "Master thesis"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ERE742",
+    "name" : "Sustainability"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE312",
+    "name" : "Power Electronics"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE321",
+    "name" : "Heat Transfer"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE522",
+    "name" : "Steel Structures"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE315",
+    "name" : "Introduction to Electric Machines and Drives"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE401",
+    "name" : "Energy Systems Simulation Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ERE732",
+    "name" : "Advanced Energy Conversion"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE515",
+    "name" : "Water and Wastewater Treatment Engineering"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ERE731",
+    "name" : "Advanced Renewable Energy Systems"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE342",
+    "name" : "Geotechnical Engineering Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE212",
+    "name" : "Electrical Circuits II"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE301",
+    "name" : "Introduction to Digital Systems and Microcontrollers"
+  },
+  {
+    "faculty" : 8,
+    "id" : "HWASH751",
+    "name" : "Simulation exercise"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE533",
+    "name" : "Highway Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE211",
+    "name" : "Electrical Circuits I"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ERE791",
+    "name" : "Special topics in renewable energy"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE214",
+    "name" : "Electronics"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE441",
+    "name" : "Power Systems"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE313",
+    "name" : "Electrical Machines Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE331",
+    "name" : "Energy Conversion"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE532",
+    "name" : "Energy lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE352",
+    "name" : "Building Materials Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "HWASH734",
+    "name" : "Budgeting, reporting, communication and partnership management lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE211",
+    "name" : "Hydrology"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE215",
+    "name" : "Electronics Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE311",
+    "name" : "Electrical Machines"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ERE751",
+    "name" : "Advanced Water and Wastewater Treatment"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE562",
+    "name" : "Engineering Projects and Construction Management"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE323",
+    "name" : "Reinforced Concrete ( 1 )"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE434",
+    "name" : "PV Technology"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE324",
+    "name" : "Introduction to Energy Systems"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE436",
+    "name" : "Renewable Energy LAB"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE511",
+    "name" : "Environmental Engineering"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE443",
+    "name" : "Electrical Power Generation, Transmission & Distribution"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE444",
+    "name" : "Modeling and Control of Energy Systems"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE101",
+    "name" : "General Chemistry II"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE512",
+    "name" : "Air Pollution Control"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE571",
+    "name" : "Modeling and simulation techniques of energy systems"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE437",
+    "name" : "Energy Engineering Economics"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE433",
+    "name" : "Solar Energy I"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE201",
+    "name" : "Statics"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE516",
+    "name" : "Smart-Grid Power Systems"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE516",
+    "name" : "Water and Wastewater Treatment Engineering Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "CEE532",
+    "name" : "Pavement Design"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE435",
+    "name" : "Wind Energy Technology"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE314",
+    "name" : "Power Electronics Lab"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE537",
+    "name" : "Energy Efficiency, management and laws"
+  },
+  {
+    "faculty" : 8,
+    "id" : "ENE213",
+    "name" : "Electrical Circuits lab"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1303",
+    "name" : "Human Physiology"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1302",
+    "name" : "Human Anatomy"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1305",
+    "name" : "Human Physiology and Anatomy lab"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1308",
+    "name" : "Microbiology for Nurses"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1204",
+    "name" : "Health Assessment lab (1-day)"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1202",
+    "name" : "Foundations of nursing lab (1-day)"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1203",
+    "name" : "Health Assessment"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR2201",
+    "name" : "Health Education and Communication Skills"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1309",
+    "name" : "Microbiology For Nurses-Lab"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR2302",
+    "name" : "Pharmacology"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1201",
+    "name" : "Foundations of Nursing"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR1304",
+    "name" : "Pathophysiology"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR2401",
+    "name" : "Adult Health Nursing I"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR3201",
+    "name" : "Trends and Ethics of Nursing profession"
+  },
+  {
+    "faculty" : 9,
+    "id" : "NUR2402",
+    "name" : "Adult Health Nursing I - Clinical"
+  }
+]
