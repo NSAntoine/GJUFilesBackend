@@ -1,10 +1,12 @@
 use core::error;
 mod course_retreival;
+mod course_insertion;
 use axum::{http::StatusCode, extract::Query, response::{IntoResponse, Response}, routing::{get, post}, Router, Json, extract::Multipart};
 use connection::establish_connection;
 use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_resource_into_db};
-use diesel::{deserialize};
+use diesel::{deserialize, QueryDsl};
 use models::{Course, CourseResource, GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
+use schema::courses;
 mod models;
 mod schema;
 mod faculties;
@@ -13,9 +15,14 @@ use crate::models::ErrorResponse;
 use tower_http::cors::{CorsLayer, Any};
 use axum::extract::Path;
 use chrono::{DateTime, Datelike, Utc};
-use std::collections::HashSet;
+
 #[tokio::main]
 async fn main() {
+    // Initialize courses if table is empty
+    if let Err(e) = course_insertion::initialize_courses_if_empty().await {
+        eprintln!("Failed to initialize courses: {}", e);
+    }
+
     let cors = CorsLayer::new()
         .allow_origin(Any)
         .allow_headers(Any)

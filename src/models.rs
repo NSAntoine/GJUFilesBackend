@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 
-#[derive(Queryable, Selectable, Serialize)]
+#[derive(Queryable, Selectable, Serialize, Deserialize, Insertable)]
 #[diesel(table_name = courses)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
 pub struct Course {    
