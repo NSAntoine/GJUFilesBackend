@@ -1,10 +1,10 @@
 use core::error;
-
-use axum::{http::StatusCode, extract::Query, response::{IntoResponse, Response}, routing::{get, /*post*/}, Router, Json};
-use connection::{establish_connection, get_course_details_from_db, get_courses_from_db};
+mod course_retreival;
+use axum::{http::StatusCode, extract::Query, response::{IntoResponse, Response}, routing::{get, post}, Router, Json, extract::Multipart};
+use connection::establish_connection;
+use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_resource_into_db};
 use diesel::{deserialize};
-use models::{Course, GetCoursesQuery};
-use serde::Deserialize;
+use models::{Course, CourseResource, GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
 mod models;
 mod schema;
 mod faculties;
@@ -12,7 +12,8 @@ mod connection;
 use crate::models::ErrorResponse;
 use tower_http::cors::{CorsLayer, Any};
 use axum::extract::Path;
-
+use chrono::{DateTime, Datelike, Utc};
+use std::collections::HashSet;
 #[tokio::main]
 async fn main() {
     let cors = CorsLayer::new()
@@ -23,6 +24,7 @@ async fn main() {
     let app = Router::new()
         .route("/v1/courses", get(get_courses))
         .route("/v1/course_details/:course_id", get(get_course_details))
+        .route("/v1/course_resource/:course_id", post(insert_course_resource))
         .layer(cors);
 
     axum::Server::bind(&"0.0.0.0:9093".parse().unwrap())
@@ -31,10 +33,86 @@ async fn main() {
         .unwrap();
 }
 
-async fn get_course_details(course_id: Path<String>) -> Result<impl IntoResponse, StatusCode> {
+pub async fn insert_course_resource(
+    Path(course_id): Path<String>,
+    mut multipart: Multipart,
+) -> Result<impl IntoResponse, StatusCode> {
+    // Get the JSON part first
+    let mut payload: Option<InsertCourseResource> = None;
+    let mut files: Vec<(String, axum::body::Bytes)> = Vec::new();
+
+    while let Some(field) = multipart.next_field().await.map_err(|_| StatusCode::BAD_REQUEST)? {
+        let name = field.name().unwrap_or("").to_string();
+        
+        if name == "metadata" {
+            let data = field.bytes().await.map_err(|_| StatusCode::BAD_REQUEST)?;
+            payload = Some(serde_json::from_slice(&data).map_err(|_| StatusCode::BAD_REQUEST)?);
+        } else if name == "files" {
+            println!("{:?}", field.headers());
+            let file_name = field.file_name().ok_or(StatusCode::BAD_REQUEST)?.to_string();
+            let file_data = field.bytes().await.map_err(|_| StatusCode::BAD_REQUEST)?;
+            files.push((file_name, file_data));
+        }
+    }
+
+    let payload = payload.ok_or(StatusCode::BAD_REQUEST)?;
+    println!("{:?}", payload);
+
+    let sem = match payload.semester.to_lowercase().as_str() {
+        "fall" => "Fall".to_string(),
+        "spring" => "Spring".to_string(),
+        "summer" => "Summer".to_string(),
+        _ => return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
+            error: "Invalid semester".to_string() 
+        })).into_response())
+    };
+
+    if payload.title.replace(" ", "").is_empty() || payload.course_id.replace(" ", "").is_empty() {
+        return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
+            error: "Title and course id can't be empty".to_string() 
+        })).into_response());
+    }
+
+    if payload.resource_type != 0 && payload.resource_type != 1 {
+        return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
+            error: "Invalid resource type (Must be either 0 for Notes, or 1 for Exams)".to_string() 
+        })).into_response());
+    }
+
+    if payload.academic_year > chrono::Utc::now().year() {
+        return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
+            error: "Academic year can't be greater than the current year".to_string() 
+        })).into_response());
+    }
+
+    let conn = &mut establish_connection().unwrap();
+    match insert_course_resource_into_db(
+        conn, 
+        payload.title, 
+        payload.subtitle, 
+        course_id, 
+        payload.resource_type, 
+        sem, 
+        payload.academic_year, 
+        payload.issolved,
+        // files,
+    ) {
+        Ok(resource) => Ok(Json(resource).into_response()),
+        Err(e) => Ok((StatusCode::INTERNAL_SERVER_ERROR, Json(ErrorResponse { 
+            error: e.to_string() 
+        })).into_response())
+    }
+}
+
+async fn get_course_details(course_id: Path<String>, query: Query<GetCourseDetailsQuery>) -> Result<impl IntoResponse, StatusCode> {
     let conn = &mut establish_connection().unwrap();
     let id = course_id.0.clone();
-    let course_details = get_course_details_from_db(conn, id);
+    let resource_type = query.0.resource_type;
+    if resource_type != 0 && resource_type != 1 {
+        return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { error: "Invalid resource type (Must be either 0 for Notes, or 1 for Exams)".to_string() })).into_response());
+    }
+
+    let course_details = get_course_details_from_db(conn, id, resource_type);
     match course_details {
         Ok(course_details) => {
             Ok(Json(course_details).into_response())
