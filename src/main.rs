@@ -1,12 +1,9 @@
-use core::error;
 mod course_retreival;
-mod course_insertion;
-use axum::{http::StatusCode, extract::Query, response::{IntoResponse, Response}, routing::{get, post}, Router, Json, extract::Multipart};
+mod course_initialization;
+use axum::{http::StatusCode, extract::Query, response::IntoResponse, routing::{get, post}, Router, Json, extract::Multipart};
 use connection::establish_connection;
 use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_resource_into_db};
-use diesel::{deserialize, QueryDsl};
-use models::{Course, CourseResource, GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
-use schema::courses;
+use models::{GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
 mod models;
 mod schema;
 mod faculties;
@@ -14,12 +11,12 @@ mod connection;
 use crate::models::ErrorResponse;
 use tower_http::cors::{CorsLayer, Any};
 use axum::extract::Path;
-use chrono::{DateTime, Datelike, Utc};
+use chrono::Datelike;
 
 #[tokio::main]
 async fn main() {
     // Initialize courses if table is empty
-    if let Err(e) = course_insertion::initialize_courses_if_empty().await {
+    if let Err(e) = course_initialization::initialize_courses_if_empty().await {
         eprintln!("Failed to initialize courses: {}", e);
     }
 
@@ -89,6 +86,12 @@ pub async fn insert_course_resource(
     if payload.academic_year > chrono::Utc::now().year() {
         return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
             error: "Academic year can't be greater than the current year".to_string() 
+        })).into_response());
+    }
+
+    if payload.academic_year < 2000 {
+        return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
+            error: "Academic year can't be less than 2000".to_string() 
         })).into_response());
     }
 

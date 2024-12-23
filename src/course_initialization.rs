@@ -1,5 +1,4 @@
 use diesel::prelude::*;
-use dotenvy::dotenv;
 use serde::Deserialize;
 use std::fs::File;
 use std::io::BufReader;
@@ -33,7 +32,7 @@ pub async fn initialize_courses_if_empty() -> Result<(), Box<dyn std::error::Err
         return Ok(());
     }
 
-    let json_file_path = dotenvy::var("COURSES_JSON_PATH").unwrap_or("src/data/Courses.json".to_string());
+    let json_file_path = dotenvy::var("COURSES_JSON_PATH")?;
     let file = File::open(json_file_path)?;
     let reader = BufReader::new(file);
     let courses_data: Vec<CourseJson> = from_reader(reader)?;
