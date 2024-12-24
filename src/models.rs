@@ -50,7 +50,7 @@ pub struct InsertCourseResourceFile {
     pub file_name: String,
 }
 
-#[derive(Queryable, Selectable, Serialize)]
+#[derive(Queryable, Selectable, Serialize, Insertable)]
 #[diesel(table_name = course_resource_files)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
 pub struct CourseResourceFile {

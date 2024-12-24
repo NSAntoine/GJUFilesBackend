@@ -35,13 +35,14 @@ async fn main() {
         .route("/v1/course_details/:course_id", get(get_course_details))
         .route("/v1/course_resource/:course_id", post(insert_course_resource));
 
-    if cfg!(feature = "local_dev_deployment") {
+    // if cfg!(feature = "local_dev_deployment") {
+        println!("Local dev deployment");
         let cors = CorsLayer::new()
             .allow_origin(Any)
             .allow_headers(Any)
             .allow_methods(Any);
         app = app.layer(cors);
-    }
+    // }
 
     println!("Starting server on port 9093");
     axum::Server::bind(&"0.0.0.0:9093".parse().unwrap())
@@ -74,8 +75,15 @@ pub async fn insert_course_resource(
         }
     }
 
-    let payload = payload.ok_or(StatusCode::BAD_REQUEST)?;
+    let payload = match payload {
+        Some(p) => p,
+        None => return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
+            error: "Payload is required".to_string() 
+        })).into_response())
+    };
+
     println!("{:?}", payload);
+
 
     let sem = match payload.semester.to_lowercase().as_str() {
         "fall" => "Fall".to_string(),
@@ -88,9 +96,11 @@ pub async fn insert_course_resource(
 
     if payload.title.replace(" ", "").is_empty() || payload.course_id.replace(" ", "").is_empty() {
         return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
-            error: "Title and course id can't be empty".to_string() 
+            error: "Title / course id can't be empty".to_string() 
         })).into_response());
     }
+
+    println!("Reached 2");
 
     if payload.resource_type != 0 && payload.resource_type != 1 {
         return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 

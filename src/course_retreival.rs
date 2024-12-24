@@ -7,6 +7,12 @@ use crate::schema::{self, course_resources};
 use crate::models::{CourseDetails, CourseDetailsResourceResponse, CourseResource, CourseResourceFile, GetCoursesResponse};
 use reqwest::Client;
 
+/* Don't make this public. it's what the gcloud api returns when you upload a file */
+#[derive(Debug, serde::Deserialize)]
+struct __UploadResourceFileResponse {
+    pub mediaLink: String
+}
+
 pub struct CourseResourceUploadFile {
     pub filename: String,
     pub data: Vec<u8>
@@ -51,16 +57,37 @@ pub async fn insert_course_resource_into_db(conn: &mut PgConnection, title: Stri
     let bucket_folder_name = format!("course_resources/{}/{}", course_id, new_resource_id);
     // concurrently upload files to bucket
     let bucket_name = "gjufilesresources";
+    let mut new_resource_files: Vec<CourseResourceFile> = Vec::new();
     for file in files {
         let file_in_bucket_name = format!("{}/{}", bucket_folder_name, file.filename);
-        let url = format!(
+        let request_url = format!(
             "https://storage.googleapis.com/upload/storage/v1/b/{}/o?uploadType=media&name={}",
             bucket_name, file_in_bucket_name
         );
 
-        let client = Client::new()
-        .post(&url)
-        .bearer_auth(get_token_cache().await.unwrap());
+        let response = Client::new()
+            .post(&request_url)
+            .bearer_auth(get_token_cache().await.unwrap())
+            .body(file.data)
+            .send()
+            .await
+            .unwrap()
+            .json::<__UploadResourceFileResponse>()
+            .await
+            .unwrap();
+        
+        let file_url = response.mediaLink;
+        let file_name = file.filename;
+        let file_id = Uuid::new_v4();
+
+        let new_resource_file = CourseResourceFile {
+            file_id,
+            file_name,
+            file_url,
+            resource_id: new_resource_id
+        };
+
+        new_resource_files.push(new_resource_file);
     }
 
     let new_resource = CourseResource {
@@ -75,10 +102,23 @@ pub async fn insert_course_resource_into_db(conn: &mut PgConnection, title: Stri
         issolved: is_solved
     };
 
-    diesel::insert_into(course_resources::table)
+    match diesel::insert_into(course_resources::table)
         .values(new_resource)
         .returning(CourseResource::as_returning())
-        .get_result(conn)
+        .get_result(conn) {
+            Ok(resource) => {
+                if let Err(e) = diesel::insert_into(schema::course_resource_files::table)
+                    .values(new_resource_files)
+                    .execute(conn) {
+                    return Err(e);
+                }
+                
+                return Ok(resource);
+            }
+            Err(e) => {
+                return Err(e);
+            }
+        }
 }
 
 // Sanitize page number input for getting courses
