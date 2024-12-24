@@ -1,3 +1,5 @@
+//! By default, when the backend is initialized, the courses table is empty.
+//! This file is used to initialize the courses table with the data from the courses.json file.
 use diesel::prelude::*;
 use serde::Deserialize;
 use std::fs::File;

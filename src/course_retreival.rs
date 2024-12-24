@@ -2,8 +2,15 @@ use diesel::dsl::count_star;
 use diesel::{BoolExpressionMethods, ExpressionMethods, PgTextExpressionMethods, SelectableHelper};
 use diesel::{PgConnection, QueryDsl, RunQueryDsl};
 use uuid::Uuid;
+use crate::authentication::get_token_cache;
 use crate::schema::{self, course_resources};
 use crate::models::{CourseDetails, CourseDetailsResourceResponse, CourseResource, CourseResourceFile, GetCoursesResponse};
+use reqwest::Client;
+
+pub struct CourseResourceUploadFile {
+    pub filename: String,
+    pub data: Vec<u8>
+}
 
 pub fn get_course_details_from_db(conn: &mut PgConnection, course_id: String, resource_type: i16) -> Result<CourseDetails, diesel::result::Error> {
     use schema::courses;
@@ -39,8 +46,23 @@ fn get_course_resource_files_from_db(conn: &mut PgConnection, resource_id: Uuid)
     return Err(diesel::result::Error::NotFound);
 }
 
-pub fn insert_course_resource_into_db(conn: &mut PgConnection, title: String, subtitle: Option<String>, course_id: String, resource_type: i16, semester: String, academic_year: i32, is_solved: bool) -> Result<CourseResource, diesel::result::Error> {
+pub async fn insert_course_resource_into_db(conn: &mut PgConnection, title: String, subtitle: Option<String>, course_id: String, resource_type: i16, semester: String, academic_year: i32, is_solved: bool, files: Vec<CourseResourceUploadFile>) -> Result<CourseResource, diesel::result::Error> {
     let new_resource_id = Uuid::new_v4();
+    let bucket_folder_name = format!("course_resources/{}/{}", course_id, new_resource_id);
+    // concurrently upload files to bucket
+    let bucket_name = "gjufilesresources";
+    for file in files {
+        let file_in_bucket_name = format!("{}/{}", bucket_folder_name, file.filename);
+        let url = format!(
+            "https://storage.googleapis.com/upload/storage/v1/b/{}/o?uploadType=media&name={}",
+            bucket_name, file_in_bucket_name
+        );
+
+        let client = Client::new()
+        .post(&url)
+        .bearer_auth(get_token_cache().await.unwrap());
+    }
+
     let new_resource = CourseResource {
         title,
         subtitle,
@@ -106,13 +128,14 @@ pub fn get_courses_from_db(conn: &mut PgConnection, faculty: Option<i16>, search
     Type (Integer, 0 = Notes, 1 = Exams)
     Year (Int)
     isSolved (Boolean)
-     */
+    */
 
+    // TODO: Refactor query and count query to use a macro
     if let Some(fac) = faculty { 
         query = query.filter(courses::course_faculty.eq(fac));
     }
 
-    // Create a separate count query with the same conditions
+    // Create a separate count query with the same conditions, but without the limit (for pagination)
     let mut count_query = courses::table.into_boxed();
     
     if let Some(search) = searchTerm {
@@ -127,6 +150,7 @@ pub fn get_courses_from_db(conn: &mut PgConnection, faculty: Option<i16>, search
         count_query = count_query.filter(courses::course_faculty.eq(fac))
     }
 
+    // the total count without the limit that's used for pagination
     let total_count = count_query.select(count_star()).get_result::<i64>(conn)?;
 
     query = query.limit(limit);
@@ -136,10 +160,5 @@ pub fn get_courses_from_db(conn: &mut PgConnection, faculty: Option<i16>, search
         .offset((offset_page - 1) * limit)
         .order(courses::course_id.asc());
     
-    match query.load(conn) { 
-        Ok(vecs) => {
-            return Ok(GetCoursesResponse { courses: vecs, total_courses: total_count })
-        }
-        Err(error) => Err(error)
-    }
+    return Ok(GetCoursesResponse { courses: query.load(conn)?, total_courses: total_count });
 }

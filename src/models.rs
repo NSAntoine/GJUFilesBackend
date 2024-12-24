@@ -14,7 +14,7 @@ pub struct Course {
     pub course_faculty: i16
 }
 
-#[derive(Queryable, Selectable, Serialize, Deserialize,Insertable)]
+#[derive(Queryable, Selectable, Serialize, Deserialize, Insertable)]
 #[diesel(table_name = course_resources)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
 pub struct CourseResource {

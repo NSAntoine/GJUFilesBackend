@@ -1,13 +1,16 @@
-mod course_retreival;
-mod course_initialization;
 use axum::{http::StatusCode, extract::Query, response::IntoResponse, routing::{get, post}, Router, Json, extract::Multipart};
 use connection::establish_connection;
-use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_resource_into_db};
+use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_resource_into_db, CourseResourceUploadFile};
 use models::{GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
+
 mod models;
 mod schema;
 mod faculties;
 mod connection;
+mod course_retreival;
+mod course_initialization;
+mod authentication;
+
 use crate::models::ErrorResponse;
 use tower_http::cors::{CorsLayer, Any};
 use axum::extract::Path;
@@ -20,30 +23,41 @@ async fn main() {
         eprintln!("Failed to initialize courses: {}", e);
     }
 
-    let cors = CorsLayer::new()
-        .allow_origin(Any)
-        .allow_headers(Any)
-        .allow_methods(Any);
+    // Initialize token cache
+    if let Err(e) = authentication::get_token_cache().await {
+        eprintln!("Failed to initialize token cache: {}", e);
+    }
 
-    let app = Router::new()
+    println!("Initialized token cache for buckets");
+
+    let mut app = Router::new()
         .route("/v1/courses", get(get_courses))
         .route("/v1/course_details/:course_id", get(get_course_details))
-        .route("/v1/course_resource/:course_id", post(insert_course_resource))
-        .layer(cors);
+        .route("/v1/course_resource/:course_id", post(insert_course_resource));
 
+    if cfg!(feature = "local_dev_deployment") {
+        let cors = CorsLayer::new()
+            .allow_origin(Any)
+            .allow_headers(Any)
+            .allow_methods(Any);
+        app = app.layer(cors);
+    }
+
+    println!("Starting server on port 9093");
     axum::Server::bind(&"0.0.0.0:9093".parse().unwrap())
         .serve(app.into_make_service())
         .await
         .unwrap();
 }
 
+// #[axum_macros::debug_handler]
 pub async fn insert_course_resource(
     Path(course_id): Path<String>,
     mut multipart: Multipart,
 ) -> Result<impl IntoResponse, StatusCode> {
     // Get the JSON part first
     let mut payload: Option<InsertCourseResource> = None;
-    let mut files: Vec<(String, axum::body::Bytes)> = Vec::new();
+    let mut files: Vec<CourseResourceUploadFile> = Vec::new();
 
     while let Some(field) = multipart.next_field().await.map_err(|_| StatusCode::BAD_REQUEST)? {
         let name = field.name().unwrap_or("").to_string();
@@ -55,7 +69,8 @@ pub async fn insert_course_resource(
             println!("{:?}", field.headers());
             let file_name = field.file_name().ok_or(StatusCode::BAD_REQUEST)?.to_string();
             let file_data = field.bytes().await.map_err(|_| StatusCode::BAD_REQUEST)?;
-            files.push((file_name, file_data));
+            let file_data_vec = file_data.to_vec();
+            files.push(CourseResourceUploadFile { filename: file_name, data: file_data_vec });
         }
     }
 
@@ -105,8 +120,8 @@ pub async fn insert_course_resource(
         sem, 
         payload.academic_year, 
         payload.issolved,
-        // files,
-    ) {
+        files
+    ).await {
         Ok(resource) => Ok(Json(resource).into_response()),
         Err(e) => Ok((StatusCode::INTERNAL_SERVER_ERROR, Json(ErrorResponse { 
             error: e.to_string() 
