@@ -1,6 +1,6 @@
 use axum::{http::StatusCode, extract::Query, response::IntoResponse, routing::{get, post}, Router, Json, extract::Multipart};
 use connection::establish_connection;
-use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_resource_into_db, CourseResourceUploadFile};
+use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_link_into_db, insert_course_resource_into_db, CourseResourceUploadFile};
 use models::{GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
 
 mod models;
@@ -15,6 +15,12 @@ use crate::models::ErrorResponse;
 use tower_http::cors::{CorsLayer, Any};
 use axum::extract::Path;
 use chrono::Datelike;
+
+#[derive(serde::Deserialize, serde::Serialize)]
+struct InsertCourseLinkRequest { 
+    title: String,
+    url: String
+}
 
 #[tokio::main]
 async fn main() {
@@ -33,16 +39,17 @@ async fn main() {
     let mut app = Router::new()
         .route("/v1/courses", get(get_courses))
         .route("/v1/course_details/:course_id", get(get_course_details))
-        .route("/v1/course_resource/:course_id", post(insert_course_resource));
+        .route("/v1/course_resource/:course_id", post(insert_course_resource))
+        .route("/v1/course_link/:course_id", post(insert_course_link));
 
-    // if cfg!(feature = "local_dev_deployment") {
+    if dotenvy::var("LOCAL_DEV_DEPLOYMENT").is_ok() {
         println!("Local dev deployment");
         let cors = CorsLayer::new()
             .allow_origin(Any)
             .allow_headers(Any)
             .allow_methods(Any);
         app = app.layer(cors);
-    // }
+    }
 
     println!("Starting server on port 9093");
     axum::Server::bind(&"0.0.0.0:9093".parse().unwrap())
@@ -51,7 +58,14 @@ async fn main() {
         .unwrap();
 }
 
-// #[axum_macros::debug_handler]
+async fn insert_course_link(Path(course_id): Path<String>, Json(payload): Json<InsertCourseLinkRequest> ) -> Result<impl IntoResponse, StatusCode> {
+    let conn = &mut establish_connection().unwrap();
+    match insert_course_link_into_db(conn, payload.title, payload.url, course_id) {
+        Ok(_) => Ok(StatusCode::OK.into_response()),
+        Err(e) => Ok((StatusCode::INTERNAL_SERVER_ERROR, Json(ErrorResponse { error: e.to_string() })).into_response())
+    }
+}
+
 pub async fn insert_course_resource(
     Path(course_id): Path<String>,
     mut multipart: Multipart,

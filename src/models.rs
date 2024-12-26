@@ -1,4 +1,4 @@
-use crate::schema::{courses, course_resources, course_resource_files};
+use crate::schema::{courses, course_resources, course_resource_files, course_resource_links};
 use chrono::Utc;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
@@ -90,7 +90,24 @@ pub struct CourseDetailsResourceResponse {
 }
 
 #[derive(Serialize)]
+pub struct CourseDetailsLinkResponse {
+    pub title: String,
+    pub url: String
+}
+
+#[derive(Serialize)]
 pub struct CourseDetails {
     pub metadata: Course,
-    pub resources: Vec<CourseDetailsResourceResponse>
+    pub resources: Vec<CourseDetailsResourceResponse>,
+    pub links: Vec<CourseDetailsLinkResponse>
+}
+
+#[derive(Deserialize, Serialize, Insertable, Queryable, Debug)]
+#[diesel(table_name = course_resource_links)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+pub struct CourseResourceLink {
+    pub link_id: Uuid,
+    pub link_title: String,
+    pub link_url: String,
+    pub course_id: String
 }

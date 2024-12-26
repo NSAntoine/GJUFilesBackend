@@ -29,3 +29,11 @@ CREATE TABLE course_resource_files (
     Resource_ID UUID NOT NULL, /* UUID: Resource ID */
     FOREIGN KEY (Resource_ID) REFERENCES course_resources(Resource_ID)
 );
+
+CREATE TABLE course_resource_links (
+    Link_ID UUID PRIMARY KEY, /* UUID: Link ID */
+    Link_Title VARCHAR NOT NULL, /* String: Title of the link */
+    Link_URL VARCHAR NOT NULL, /* String: URL of the link */
+    Course_ID VARCHAR NOT NULL, /* String: Course ID */
+    FOREIGN KEY (Course_ID) REFERENCES courses(Course_ID)
+);

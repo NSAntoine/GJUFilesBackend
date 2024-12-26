@@ -3,8 +3,8 @@ use diesel::{BoolExpressionMethods, ExpressionMethods, PgTextExpressionMethods, 
 use diesel::{PgConnection, QueryDsl, RunQueryDsl};
 use uuid::Uuid;
 use crate::authentication::get_token_cache;
-use crate::schema::{self, course_resources};
-use crate::models::{CourseDetails, CourseDetailsResourceResponse, CourseResource, CourseResourceFile, GetCoursesResponse};
+use crate::schema::{self, course_resource_links, course_resources};
+use crate::models::{CourseDetails, CourseDetailsLinkResponse, CourseDetailsResourceResponse, CourseResource, CourseResourceFile, CourseResourceLink, GetCoursesResponse};
 use reqwest::Client;
 
 /* Don't make this public. it's what the gcloud api returns when you upload a file */
@@ -22,9 +22,39 @@ pub fn get_course_details_from_db(conn: &mut PgConnection, course_id: String, re
     use schema::courses;
     let query = courses::table.filter(courses::course_id.eq(course_id.to_uppercase()));
     if let Ok(course) = query.first(conn) {
-        return Ok(CourseDetails { metadata: course, resources: get_course_resources_from_db(conn, course_id, resource_type)? });
+        return Ok(CourseDetails { metadata: course, resources: get_course_resources_from_db(conn, course_id.clone(), resource_type)?, links: get_course_links_from_db(conn, course_id)? });
     }
     return Err(diesel::result::Error::NotFound);
+}
+
+fn get_course_links_from_db(conn: &mut PgConnection, course_id: String) -> Result<Vec<CourseDetailsLinkResponse>, diesel::result::Error> { 
+    use schema::course_resource_links;
+    let query = course_resource_links::table.filter(course_resource_links::course_id.eq(course_id.to_uppercase()));
+    let links_from_db = query.load::<CourseResourceLink>(conn)?;
+    // We load a CourseResourceLink and then return a CourseDetailsLinkResponse
+    // but why??
+    // well because I don't wanna return useless info with each link like the courseID and linkID
+    // like u already know the courseID if ur requesting the link for the course here...
+    let mut links_to_return: Vec<CourseDetailsLinkResponse> = Vec::new();
+    for link in links_from_db { 
+        links_to_return.push(CourseDetailsLinkResponse { title: link.link_title, url: link.link_url });
+    }
+
+    return Ok(links_to_return);
+}
+
+pub fn insert_course_link_into_db(conn: &mut PgConnection, link_title: String, link_url: String, course_id: String) -> Result<CourseResourceLink, diesel::result::Error> { 
+    let link_uuid = Uuid::new_v4();
+    let db_resource_to_insert = CourseResourceLink { 
+        course_id,
+        link_id: link_uuid,
+        link_title,
+        link_url
+    };
+    
+    diesel::insert_into(course_resource_links::table)
+        .values(db_resource_to_insert)
+        .get_result::<CourseResourceLink>(conn)
 }
 
 fn get_course_resources_from_db(conn: &mut PgConnection, course_id: String, resource_type: i16) -> Result<Vec<CourseDetailsResourceResponse>, diesel::result::Error> {

@@ -10,6 +10,15 @@ diesel::table! {
 }
 
 diesel::table! {
+    course_resource_links (link_id) {
+        link_id -> Uuid,
+        link_title -> Varchar,
+        link_url -> Varchar,
+        course_id -> Varchar,
+    }
+}
+
+diesel::table! {
     course_resources (resource_id) {
         title -> Varchar,
         subtitle -> Nullable<Varchar>,
@@ -32,10 +41,12 @@ diesel::table! {
 }
 
 diesel::joinable!(course_resource_files -> course_resources (resource_id));
+diesel::joinable!(course_resource_links -> courses (course_id));
 diesel::joinable!(course_resources -> courses (course_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     course_resource_files,
+    course_resource_links,
     course_resources,
     courses,
 );
