@@ -1,4 +1,4 @@
-use axum::{extract::{DefaultBodyLimit, Multipart, Query}, http::StatusCode, response::IntoResponse, routing::{get, post}, Json, Router};
+use axum::{extract::{DefaultBodyLimit, Multipart, Query}, http::{header::{AUTHORIZATION, CONTENT_TYPE}, StatusCode}, response::IntoResponse, routing::{get, post}, Json, Router};
 use connection::establish_connection;
 use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_link_into_db, insert_course_resource_into_db, CourseResourceUploadFile};
 use models::{GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
@@ -15,6 +15,8 @@ use crate::models::ErrorResponse;
 use tower_http::cors::{CorsLayer, Any};
 use axum::extract::Path;
 use chrono::Datelike;
+use axum::http::{Method, HeaderValue};
+use std::time::Duration;
 
 #[derive(serde::Deserialize, serde::Serialize)]
 struct InsertCourseLinkRequest { 
@@ -50,6 +52,15 @@ async fn main() {
             .allow_origin(Any)
             .allow_headers(Any)
             .allow_methods(Any);
+        app = app.layer(cors).layer(DefaultBodyLimit::max(1024 * 1024 * 1024));
+    } else {
+        // Production CORS configuration
+        let cors = CorsLayer::new()
+            .allow_origin("https://gjufiles.com".parse::<HeaderValue>().unwrap())
+            .allow_origin("https://www.gjufiles.com".parse::<HeaderValue>().unwrap())
+            .allow_methods([Method::GET, Method::POST])
+            .allow_headers([CONTENT_TYPE, AUTHORIZATION])
+            .max_age(Duration::from_secs(3600));
         app = app.layer(cors).layer(DefaultBodyLimit::max(1024 * 1024 * 1024));
     }
 
