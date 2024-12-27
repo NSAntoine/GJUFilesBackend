@@ -1,4 +1,4 @@
-use axum::{http::StatusCode, extract::Query, response::IntoResponse, routing::{get, post}, Router, Json, extract::Multipart};
+use axum::{extract::{DefaultBodyLimit, Multipart, Query}, http::StatusCode, response::IntoResponse, routing::{get, post}, Json, Router};
 use connection::establish_connection;
 use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_link_into_db, insert_course_resource_into_db, CourseResourceUploadFile};
 use models::{GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
@@ -40,7 +40,8 @@ async fn main() {
         .route("/v1/courses", get(get_courses))
         .route("/v1/course_details/:course_id", get(get_course_details))
         .route("/v1/course_resource/:course_id", post(insert_course_resource))
-        .route("/v1/course_link/:course_id", post(insert_course_link));
+        .route("/v1/course_link/:course_id", post(insert_course_link))
+        .layer(DefaultBodyLimit::max(1024 * 1024 * 1024));
 
     if dotenvy::var("LOCAL_DEV_DEPLOYMENT").is_ok() {
         println!("Local dev deployment");
@@ -81,12 +82,20 @@ pub async fn insert_course_resource(
             let data = field.bytes().await.map_err(|_| StatusCode::BAD_REQUEST)?;
             payload = Some(serde_json::from_slice(&data).map_err(|_| StatusCode::BAD_REQUEST)?);
         } else if name == "files" {
-            println!("{:?}", field.headers());
             let file_name = field.file_name().ok_or(StatusCode::BAD_REQUEST)?.to_string();
+            println!("Entering file {}", file_name);
             let file_data = field.bytes().await.map_err(|_| StatusCode::BAD_REQUEST)?;
+            println!("Got data of file {}", file_name);
             let file_data_vec = file_data.to_vec();
-            files.push(CourseResourceUploadFile { filename: file_name, data: file_data_vec });
+            files.push(CourseResourceUploadFile { filename: file_name.clone(), data: file_data_vec });
+            println!("File uploaded: {}", file_name);
         }
+    }
+
+    if files.is_empty() {
+        return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
+            error: "User must upload at least one file".to_string() 
+        })).into_response());
     }
 
     let payload = match payload {

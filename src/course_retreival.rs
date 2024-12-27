@@ -21,8 +21,14 @@ pub struct CourseResourceUploadFile {
 pub fn get_course_details_from_db(conn: &mut PgConnection, course_id: String, resource_type: i16) -> Result<CourseDetails, diesel::result::Error> {
     use schema::courses;
     let query = courses::table.filter(courses::course_id.eq(course_id.to_uppercase()));
+
+    use schema::course_resources;
+    let course_resources_query = course_resources::table.filter(course_resources::course_id.eq(course_id.to_uppercase()));
+    let no_notes = course_resources_query.clone().filter(course_resources::resource_type.eq(0)).select(count_star()).get_result::<i64>(conn)?;
+    let no_exams = course_resources_query.filter(course_resources::resource_type.eq(1)).select(count_star()).get_result::<i64>(conn)?;
+
     if let Ok(course) = query.first(conn) {
-        return Ok(CourseDetails { metadata: course, resources: get_course_resources_from_db(conn, course_id.clone(), resource_type)?, links: get_course_links_from_db(conn, course_id)? });
+        return Ok(CourseDetails { metadata: course, resources: get_course_resources_from_db(conn, course_id.clone(), resource_type)?, links: get_course_links_from_db(conn, course_id)?, no_notes, no_exams });
     }
     return Err(diesel::result::Error::NotFound);
 }
@@ -82,6 +88,31 @@ fn get_course_resource_files_from_db(conn: &mut PgConnection, resource_id: Uuid)
     return Err(diesel::result::Error::NotFound);
 }
 
+fn sanitize_file_name_to_upload(file_name: String) -> String {
+    return file_name.replace(" ", "_")
+    .replace("#", "_")
+    .replace("'", "_")
+    .replace("\"", "_")
+    .replace(":", "_")
+    .replace(";", "_")
+    .replace("|", "_");
+}
+
+fn file_content_type(file_name: String) -> String {
+    let extension = file_name.split('.').last().unwrap();
+    return match extension {
+        "pdf" => "application/pdf".to_string(),
+        "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document".to_string(),
+        "pptx" => "application/vnd.ms-powerpoint".to_string(),
+        "ppt" => "application/vnd.ms-powerpoint".to_string(),
+        "jpg" => "image/jpeg".to_string(),
+        "jpeg" => "image/jpeg".to_string(),
+        "png" => "image/png".to_string(),
+        "gif" => "image/gif".to_string(),
+        _ => "application/octet-stream".to_string()
+    };
+}
+
 pub async fn insert_course_resource_into_db(conn: &mut PgConnection, title: String, subtitle: Option<String>, course_id: String, resource_type: i16, semester: String, academic_year: i32, is_solved: bool, files: Vec<CourseResourceUploadFile>) -> Result<CourseResource, diesel::result::Error> {
     let new_resource_id = Uuid::new_v4();
     let bucket_folder_name = format!("course_resources/{}/{}", course_id, new_resource_id);
@@ -89,16 +120,20 @@ pub async fn insert_course_resource_into_db(conn: &mut PgConnection, title: Stri
     let bucket_name = "gjufilesresources";
     let mut new_resource_files: Vec<CourseResourceFile> = Vec::new();
     for file in files {
-        let file_in_bucket_name = format!("{}/{}", bucket_folder_name, file.filename);
+        let sanitized_file_name = sanitize_file_name_to_upload(file.filename);
+        let file_in_bucket_name = format!("{}/{}", bucket_folder_name, sanitized_file_name);
         let request_url = format!(
             "https://storage.googleapis.com/upload/storage/v1/b/{}/o?uploadType=media&name={}",
             bucket_name, file_in_bucket_name
         );
 
+        let content_type = file_content_type(sanitized_file_name.clone());
+        println!("Content type: {}", content_type);
         let response = Client::new()
             .post(&request_url)
             .bearer_auth(get_token_cache().await.unwrap())
             .body(file.data)
+            .header("Content-Type", content_type)
             .send()
             .await
             .unwrap()
@@ -106,13 +141,12 @@ pub async fn insert_course_resource_into_db(conn: &mut PgConnection, title: Stri
             .await
             .unwrap();
         
-        let file_url = response.mediaLink;
-        let file_name = file.filename;
+        let file_url = format!("https://storage.googleapis.com/{}/{}", bucket_name, file_in_bucket_name);
         let file_id = Uuid::new_v4();
 
         let new_resource_file = CourseResourceFile {
             file_id,
-            file_name,
+            file_name: sanitized_file_name,
             file_url,
             resource_id: new_resource_id
         };

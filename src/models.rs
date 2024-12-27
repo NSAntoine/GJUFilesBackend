@@ -99,7 +99,9 @@ pub struct CourseDetailsLinkResponse {
 pub struct CourseDetails {
     pub metadata: Course,
     pub resources: Vec<CourseDetailsResourceResponse>,
-    pub links: Vec<CourseDetailsLinkResponse>
+    pub links: Vec<CourseDetailsLinkResponse>,
+    pub no_notes: i64,
+    pub no_exams: i64
 }
 
 #[derive(Deserialize, Serialize, Insertable, Queryable, Debug)]
