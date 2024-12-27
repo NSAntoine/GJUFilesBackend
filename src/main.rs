@@ -59,7 +59,7 @@ async fn main() {
             .allow_origin("https://gjufiles.com".parse::<HeaderValue>().unwrap())
             .allow_origin("https://www.gjufiles.com".parse::<HeaderValue>().unwrap())
             .allow_methods([Method::GET, Method::POST])
-            .allow_headers([CONTENT_TYPE, AUTHORIZATION])
+            .allow_headers(Any)
             .max_age(Duration::from_secs(3600));
         app = app.layer(cors).layer(DefaultBodyLimit::max(1024 * 1024 * 1024));
     }
