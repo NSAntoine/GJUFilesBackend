@@ -110,7 +110,7 @@ pub async fn insert_course_resource(
 
     let sem = match payload.semester.to_lowercase().as_str() {
         "first" => "First".to_string(),
-        "Second" => "Second".to_string(),
+        "second" => "Second".to_string(),
         "summer" => "Summer".to_string(),
         _ => return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
             error: "Invalid semester".to_string() 
