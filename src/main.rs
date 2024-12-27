@@ -41,6 +41,7 @@ async fn main() {
         .route("/v1/course_details/:course_id", get(get_course_details))
         .route("/v1/course_resource/:course_id", post(insert_course_resource))
         .route("/v1/course_link/:course_id", post(insert_course_link))
+        .fallback(fallback)
         .layer(DefaultBodyLimit::max(1024 * 1024 * 1024));
 
     if dotenvy::var("LOCAL_DEV_DEPLOYMENT").is_ok() {
@@ -57,6 +58,11 @@ async fn main() {
         .serve(app.into_make_service())
         .await
         .unwrap();
+}
+
+async fn fallback(uri: axum::http::Uri) -> impl axum::response::IntoResponse {
+    println!("404: {}", uri); // Log the missing route
+    (axum::http::StatusCode::NOT_FOUND, "Not Found")
 }
 
 async fn insert_course_link(Path(course_id): Path<String>, Json(payload): Json<InsertCourseLinkRequest> ) -> Result<impl IntoResponse, StatusCode> {
