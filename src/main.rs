@@ -49,7 +49,7 @@ async fn main() {
             .allow_origin(Any)
             .allow_headers(Any)
             .allow_methods(Any);
-        app = app.layer(cors);
+        app = app.layer(cors).layer(DefaultBodyLimit::max(1024 * 1024 * 1024));
     }
 
     println!("Starting server on port 9093");
@@ -109,8 +109,8 @@ pub async fn insert_course_resource(
 
 
     let sem = match payload.semester.to_lowercase().as_str() {
-        "fall" => "Fall".to_string(),
-        "spring" => "Spring".to_string(),
+        "first" => "First".to_string(),
+        "Second" => "Second".to_string(),
         "summer" => "Summer".to_string(),
         _ => return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { 
             error: "Invalid semester".to_string() 
