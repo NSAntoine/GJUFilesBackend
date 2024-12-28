@@ -136,10 +136,12 @@ pub async fn insert_course_resource_into_db(conn: &mut PgConnection, title: Stri
             .header("Content-Type", content_type)
             .send()
             .await
-            .unwrap()
-            .json::<__UploadResourceFileResponse>()
-            .await
             .unwrap();
+        // Check that the response is a 200-299 status code 
+        // to make sure the file uploaded successfully
+        if !(200..=299).contains(&response.status().as_u16()) {
+            return Err(diesel::result::Error::NotFound);
+        }
         
         let file_url = format!("https://storage.googleapis.com/{}/{}", bucket_name, file_in_bucket_name);
         let file_id = Uuid::new_v4();

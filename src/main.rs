@@ -3,6 +3,8 @@ use connection::establish_connection;
 use course_retreival::{get_course_details_from_db, get_courses_from_db, insert_course_link_into_db, insert_course_resource_into_db, CourseResourceUploadFile};
 use models::{GetCourseDetailsQuery, GetCoursesQuery, InsertCourseResource};
 
+use regex::Regex;
+
 mod models;
 mod schema;
 mod faculties;
@@ -57,7 +59,6 @@ async fn main() {
         // Production CORS configuration
         let cors = CorsLayer::new()
             .allow_origin("https://gjufiles.com".parse::<HeaderValue>().unwrap())
-            .allow_origin("https://www.gjufiles.com".parse::<HeaderValue>().unwrap())
             .allow_methods([Method::GET, Method::POST])
             .allow_headers(Any)
             .max_age(Duration::from_secs(3600));
@@ -78,6 +79,15 @@ async fn fallback(uri: axum::http::Uri) -> impl axum::response::IntoResponse {
 
 async fn insert_course_link(Path(course_id): Path<String>, Json(payload): Json<InsertCourseLinkRequest> ) -> Result<impl IntoResponse, StatusCode> {
     let conn = &mut establish_connection().unwrap();
+    if payload.url.is_empty() {
+        return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { error: "URL can't be empty".to_string() })).into_response());
+    }
+
+    let url_regex = Regex::new(r"https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}(\.[a-z]{2,4})?\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)").unwrap();
+    if !url_regex.is_match(&payload.url) {
+        return Ok((StatusCode::BAD_REQUEST, Json(ErrorResponse { error: "Invalid URL".to_string() })).into_response());
+    }
+
     match insert_course_link_into_db(conn, payload.title, payload.url, course_id) {
         Ok(_) => Ok(StatusCode::OK.into_response()),
         Err(e) => Ok((StatusCode::INTERNAL_SERVER_ERROR, Json(ErrorResponse { error: e.to_string() })).into_response())
