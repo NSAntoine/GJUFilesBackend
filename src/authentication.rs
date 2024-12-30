@@ -26,7 +26,6 @@ pub async fn get_token_cache() -> Result<String, gcp_auth::Error> {
     if TOKEN_STORE.get().is_none() {
         _ = TOKEN_STORE.set(new_token.clone());
     } else {
-        // Use async block to return a future
         TOKEN_STORE.get_or_init(|| async { new_token.clone() }).await;
     }
     
